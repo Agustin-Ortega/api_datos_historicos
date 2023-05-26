@@ -8,21 +8,41 @@ export class ApiSensores {
     }
 
     getSensor = async id => {
-        return id? await this.sensoresModel.getSensor(id) : await this.sensoresModel.getSensores();
+        try {
+            return id ? await this.sensoresModel.getSensor(id) : await this.sensoresModel.getSensores();
+        } catch (error) {
+            console.log('Error en el getSensor: ', error);
+        }
+
     }
 
-    saveSensor = async sensor =>{
-        return await this.sensoresModel.saveSensor(sensor)
+    saveSensor = async sensor => {
+        try {
+            return await this.sensoresModel.saveSensor(sensor)
+        } catch (error) {
+            console.log('Error en el saveSensor: ', error);
+        }
+
     }
 
-    updateSensor = async (sensor,id) =>{
-        return await this.sensoresModel.updateSensor(sensor,id)
+    updateSensor = async (sensor, id) => {
+        try {
+            return await this.sensoresModel.updateSensor(sensor, id)
+        } catch (error) {
+            console.log('Error en el updateSensor: ', error);
+        }
+
     }
 
-    deleteSensor = async id =>{
-        return await this.sensoresModel.deleteSensor(id)
+    deleteSensor = async id => {
+        try {
+            return await this.sensoresModel.deleteSensor(id)
+        } catch (error) {
+            console.log('Error en el deleteSensor: ', error);
+        }
+
     }
-    
+
 }
 
 
